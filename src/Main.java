@@ -1,4 +1,4 @@
-import Exeptions.EmptyInputException;
+import exeptions.EmptyInputException;
 
 public class Main {
     public static void main(String[] args) {

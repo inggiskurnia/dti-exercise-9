@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     static Scanner scanner = new Scanner(System.in);
     static int selectedMenu = 0;
-    static ToDoList newList = new ToDoList();
+    static ToDoList toDoList = new ToDoList();
 
     public static int run(){
 
@@ -31,13 +31,13 @@ public class App {
                     break;
                 case 1 : {
                     // create new list
-                    newList.createList();
+                    toDoList.createList();
                     selectedMenu = 0;
                     break;
                 }
                 case 2 : {
                     // show all list
-                    newList.showAllList();
+                    toDoList.showAllList();
                     System.out.println("Press 0 to back to previous menu");
                     int goBack = scanner.nextInt();
 
@@ -50,11 +50,12 @@ public class App {
                 }
                 case 3 : {
                     // delete list
-                    newList.deleteList();
+                    toDoList.deleteList();
                     selectedMenu = 0;
                     break;
                 }
                 case 4 : {
+                    // go back to main menu
                     selectedMenu = 0;
                     return 0;
                 }

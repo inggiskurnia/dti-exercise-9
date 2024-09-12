@@ -5,7 +5,8 @@ public class MainMenu {
     static Scanner scanner = new Scanner(System.in);
 
     public static void run(){
-        HashMap<String, String> userList = new HashMap<>();
+        //HashMap<String, String> userList = new HashMap<>();
+        User user = new User();
         int selectedMenu = 0;
 
         while (true){
@@ -31,18 +32,13 @@ public class MainMenu {
                 }
                 // register menu
                 case 1 : {
-                    System.out.println("Register new user");
-                    User registerredUser = new User();
-                    registerredUser.register();
-                    userList.put(registerredUser.getUsername(), registerredUser.getPassword());
+                    user.register();
                     selectedMenu = 0;
                     break;
                 }
                 // login menu
                 case 2 : {
-                    System.out.println("Login user");
-                    User loggedInUser = new User();
-                    if (loggedInUser.login(userList)) {
+                    if (user.login()) {
                         selectedMenu = App.run();
                     }else {
                         selectedMenu = 0;
@@ -51,9 +47,5 @@ public class MainMenu {
                 }
             }
         }
-    }
-
-    private static void mainMenu(){
-
     }
 }
