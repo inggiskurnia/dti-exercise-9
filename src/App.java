@@ -55,6 +55,7 @@ public class App {
                     break;
                 }
                 case 4 : {
+                    selectedMenu = 0;
                     return 0;
                 }
             }
